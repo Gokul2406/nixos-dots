@@ -5,17 +5,20 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      /etc/nixos/hardware-configuration.nix
-    ];
+  imports = [
+    # Include the results of the hardware scan.
+    /etc/nixos/hardware-configuration.nix
+  ];
 
-	nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
-	hardware.bluetooth = {
-	enable = true;
-	powerOnBoot = true;
-	};
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -54,20 +57,21 @@
     layout = "us";
     variant = "";
   };
-	services.blueman.enable = true;
-
+  services.blueman.enable = true;
   programs.niri.enable = true;
   programs.xwayland.enable = true;
-programs.git.enable = true;
-programs.neovim.enable = true;
-programs.fish.enable = true;
+  programs.neovim.enable = true;
+  programs.fish.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users."zenith" = {
     isNormalUser = true;
     description = "gokul";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    packages = with pkgs; [ ];
   };
 
   # Allow unfree packages
@@ -76,15 +80,17 @@ programs.fish.enable = true;
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    vim
     wget
     kitty
     zotero
     sioyek
     nixfmt
+    tree
+    bat
   ];
 
-	programs.firefox.enable = true;
+  programs.firefox.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -99,14 +105,13 @@ programs.fish.enable = true;
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
 
-services.desktopManager.plasma6.enable = true;	
-services.displayManager = {
-	sddm.enable = true;
-sddm.wayland.enable = true;
-};
+  services.desktopManager.plasma6.enable = true;
+  services.displayManager = {
+    sddm.enable = true;
+    sddm.wayland.enable = true;
+  };
 
-	environment.variables.EDITOR = "neovim";
-
+  environment.variables.EDITOR = "neovim";
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -122,4 +127,6 @@ sddm.wayland.enable = true;
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "26.05"; # Did you read the comment?
 
+  services.upower.enable = true;
+  services.power-profiles-daemon.enable = true;
 }
