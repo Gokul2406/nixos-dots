@@ -17,15 +17,23 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    vicinae.url = "github:vicinaehq/vicinae";
+    nvf = {
+    	url = "github:NotAShelf/nvf";
+	inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   nixConfig = {
   extra-substituters = [
     "https://noctalia.cachix.org"
+    "https://vicinae.cachix.org"
   ];
 
   extra-trusted-public-keys = [
     "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+        "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc="
   ];
 };
 
@@ -38,20 +46,30 @@
       home-manager,
       niri,
       noctalia,
+      vicinae,
+      nvf,
       ...
     }@inputs:
     {
       nixosConfigurations.zenith = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
+
+
         modules = [
-          ./configuration.nix
+          ./hosts/configuration.nix
           home-manager.nixosModules.home-manager
 	  inputs.niri.nixosModules.niri
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.zenith = import ./home.nix;
+            home-manager.users.zenith = {
+	    imports =  [
+	    ./home/home.nix
+	    inputs.vicinae.homeManagerModules.default
+	    nvf.homeManagerModules.default
+	    ];
+	    };
             home-manager.extraSpecialArgs = { inherit inputs; };
           }
         ];

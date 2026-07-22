@@ -7,8 +7,14 @@
 
 {
   imports = [
-    ./niri.nix
-    ./noctalia.nix
+    ./modules/niri.nix
+    ./modules/noctalia.nix
+    ./modules/fish.nix
+    ./modules/starship.nix
+    ./modules/kitty.nix
+    ./modules/vicinae.nix
+    ./modules/zoxide.nix
+    ./modules/nvf
   ];
   home.username = "zenith";
   home.homeDirectory = "/home/zenith";
@@ -22,11 +28,10 @@
 
   ];
 
-  # Let Home Manager manage itself (required)
   programs.home-manager.enable = true;
   programs.starship = {
     enable = true;
     enableFishIntegration = true;
   };
-
+  programs.fastfetch.enable = true;
 }

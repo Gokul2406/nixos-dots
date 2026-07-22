@@ -8,6 +8,7 @@
   imports = [
     # Include the results of the hardware scan.
     /etc/nixos/hardware-configuration.nix
+    ./modules/fonts.nix
   ];
 
   nix.settings.experimental-features = [
@@ -71,6 +72,7 @@
       "networkmanager"
       "wheel"
     ];
+    shell = pkgs.fish;
     packages = with pkgs; [ ];
   };
 
