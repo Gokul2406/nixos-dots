@@ -3,7 +3,7 @@
                 enable = true;
                 lsp = {
                         enable = true;
-                        server = ["ty" "ruff"];
+                        servers = ["ty" "ruff"];
                 };
         };
 }
