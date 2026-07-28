@@ -24,7 +24,7 @@
       window_padding_width = 8;
       remember_window_size = true;
       background_opacity = "1.0";
-      hide_window_decorations = "no";
+      hide_window_decorations = "yes";
     };
 
     keybindings = {
@@ -39,6 +39,6 @@
       "ctrl+shift+left" = "previous_tab";
       "ctrl+shift+right" = "next_tab";
     };
-    themeFile = "GruvboxMaterialDarkSoft";
+    themeFile = "Catppuccin-Mocha";
   };
 }

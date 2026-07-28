@@ -1,16 +1,28 @@
-{pkgs, ...}:
 {
 imports = [
         ./ui.nix
         ./langs/python.nix
+        ./langs/nix.nix
         ./completion.nix
         ./plugins/neorg.nix
+        ./binds.nix
 ];
   programs.nvf = {
     enable = true;
-    settings.vim.languages = {
-        enableFormat = true;
-        enableExtraDiagnostics = true;
+    settings.vim = {
+        languages = {
+            enableFormat = true;
+            enableExtraDiagnostics = true;
+        };
+        globals = {
+            mapleader = " ";
+        };
+
+        utility = {
+            snacks-nvim = {
+                enable = true;
+            };
+        };
     };
   };
 }

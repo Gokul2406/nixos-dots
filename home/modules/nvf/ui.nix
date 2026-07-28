@@ -2,10 +2,16 @@
         programs.nvf.settings.vim = {
                 theme = {
                         enable = true;
-                        name = "gruvbox";
-                        style = "dark";
+                        name = "catppuccin";
+                        style = "mocha";
                         transparent = true;
                 };
+
+                 options = { tabstop = 4;
+                  shiftwidth = 4;
+                  softtabstop = 4;
+                  expandtab = true;
+                  };
                 statusline.lualine.enable = true;
                 filetree = {
                         nvimTree = {
@@ -31,8 +37,5 @@
               gitsigns.codeActions.enable = false; # throws an annoying debug message
               neogit.enable = true;
             };
-
-            dashboard.alpha.enable = true;
-
         };
 }

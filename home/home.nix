@@ -21,7 +21,6 @@
 
   home.stateVersion = "26.11";
 
-  # User-specific packages that don't need root/system-wide installation
   home.packages = with pkgs; [
     git
     htop

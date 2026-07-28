@@ -5,5 +5,6 @@
                         enable = true;
                         servers = ["ty" "ruff"];
                 };
+                treesitter.enable = true;
         };
 }
