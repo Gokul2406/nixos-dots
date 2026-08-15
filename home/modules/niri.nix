@@ -3,7 +3,9 @@
 {
   programs.niri = {
     settings = {
+      prefer-no-csd = false;
       spawn-at-startup = [
+        
         {
           command = [ "noctalia" ];
         }

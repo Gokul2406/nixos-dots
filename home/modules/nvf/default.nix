@@ -2,6 +2,7 @@
 imports = [
         ./ui.nix
         ./langs/python.nix
+        ./langs/rust.nix
         ./langs/nix.nix
         ./completion.nix
         ./plugins/neorg.nix
@@ -16,12 +17,6 @@ imports = [
         };
         globals = {
             mapleader = " ";
-        };
-
-        utility = {
-            snacks-nvim = {
-                enable = true;
-            };
         };
     };
   };

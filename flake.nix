@@ -23,6 +23,13 @@
     	url = "github:NotAShelf/nvf";
 	inputs.nixpkgs.follows = "nixpkgs";
     };
+        zen-browser = {
+    url = "github:0xc000022070/zen-browser-flake";
+    inputs = {
+      nixpkgs.follows = "nixpkgs";
+      home-manager.follows = "home-manager";
+    };
+  };
   };
 
   nixConfig = {
@@ -67,6 +74,7 @@
 	    imports =  [
 	    ./home/home.nix
 	    inputs.vicinae.homeManagerModules.default
+                                    inputs.zen-browser.homeModules.beta
 	    nvf.homeManagerModules.default
 	    ];
 	    };

@@ -22,8 +22,7 @@
       tab_bar_edge = "top";
       tab_bar_style = "powerline";
       window_padding_width = 8;
-      remember_window_size = true;
-      background_opacity = "1.0";
+      background_opacity = "0.8";
       hide_window_decorations = "yes";
     };
 
@@ -31,7 +30,7 @@
       "ctrl+shift+c" = "copy_to_clipboard";
       "ctrl+shift+v" = "paste_from_clipboard";
 
-      "ctrl+shift+t" = "new_tab";
+      "ctrl+t" = "new_tab";
       "ctrl+shift+w" = "close_tab";
 
       "ctrl+shift+enter" = "new_window";

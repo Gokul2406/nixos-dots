@@ -21,8 +21,8 @@
 
   networking.hostName = "zenith"; # Define your hostname.
 
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  networking.proxy.default = "http://172.16.2.251:3128/";
+  networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   networking.networkmanager.enable = true;
 
@@ -49,9 +49,18 @@
 
   services.blueman.enable = true;
   programs.niri.enable = true;
+    programs.nix-ld.enable = true;
   programs.xwayland.enable = true;
   programs.neovim.enable = true;
   programs.fish.enable = true;
+
+  programs.nh = {
+    enable = true;
+    clean.enable = true;
+    clean.extraArgs = "--keep-since 4d --keep 3";
+    flake = "/home/zenith/.config/nixos-dots/"; 
+  };
+
 
   users.users."zenith" = {
     isNormalUser = true;
@@ -75,6 +84,8 @@
     nixfmt
     tree
     bat
+    uv
+        devenv
   ];
 
   programs.firefox.enable = true;
@@ -84,7 +95,7 @@
     sddm.enable = true;
     sddm.wayland.enable = true;
   };
-
+services.cloudflare-warp.enable = true;
   services.upower.enable = true;
   services.power-profiles-daemon.enable = true;
 

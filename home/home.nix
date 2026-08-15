@@ -1,7 +1,5 @@
 {
-  config,
   pkgs,
-  inputs,
   ...
 }:
 
@@ -24,7 +22,6 @@
   home.packages = with pkgs; [
     git
     htop
-
   ];
 
   programs.home-manager.enable = true;
@@ -33,4 +30,8 @@
     enableFishIntegration = true;
   };
   programs.fastfetch.enable = true;
+      programs.zen-browser = {
+    enable = true;
+    setAsDefaultBrowser = true;
+  };
 }
