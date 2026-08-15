@@ -1,10 +1,12 @@
 {
   pkgs,
+  inputs,
   ...
 }:
 
 {
   imports = [
+    inputs.niri-nix.homeModules.default
     ./modules/niri.nix
     ./modules/noctalia.nix
     ./modules/fish.nix

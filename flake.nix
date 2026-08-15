@@ -14,7 +14,7 @@
     };
 
     niri = {
-      url = "github:sodiboo/niri-flake";
+      url = "git+https://codeberg.org/BANanaD3V/niri-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -66,7 +66,6 @@
         modules = [
           ./hosts/configuration.nix
           home-manager.nixosModules.home-manager
-	  inputs.niri.nixosModules.niri
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
@@ -74,7 +73,7 @@
 	    imports =  [
 	    ./home/home.nix
 	    inputs.vicinae.homeManagerModules.default
-                                    inputs.zen-browser.homeModules.beta
+                                    inputs.zen-browser
 	    nvf.homeManagerModules.default
 	    ];
 	    };
