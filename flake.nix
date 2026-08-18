@@ -13,7 +13,7 @@
       url = "github:noctalia-dev/noctalia/cachix";
     };
 
-    niri = {
+    niri-nix = {
       url = "git+https://codeberg.org/BANanaD3V/niri-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -51,7 +51,7 @@
       self,
       nixpkgs,
       home-manager,
-      niri,
+      niri-nix,
       noctalia,
       vicinae,
       nvf,
@@ -73,7 +73,7 @@
 	    imports =  [
 	    ./home/home.nix
 	    inputs.vicinae.homeManagerModules.default
-                                    inputs.zen-browser
+        inputs.zen-browser.homeModules.beta
 	    nvf.homeManagerModules.default
 	    ];
 	    };

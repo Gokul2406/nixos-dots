@@ -24,6 +24,7 @@
       window_padding_width = 8;
       background_opacity = "0.8";
       hide_window_decorations = "yes";
+      background_blur = 1;
     };
 
     keybindings = {

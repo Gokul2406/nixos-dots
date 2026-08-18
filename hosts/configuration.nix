@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   imports = [
@@ -91,6 +91,7 @@
   programs.firefox.enable = true;
 
   services.desktopManager.plasma6.enable = true;
+    services.displayManager.defaultSession = lib.mkForce "niri";
   services.displayManager = {
     sddm.enable = true;
     sddm.wayland.enable = true;
