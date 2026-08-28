@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  programs.vicinae = {
-    enable = true;
-  };
+    programs.vicinae = {
+        enable = true;
+    };
 }

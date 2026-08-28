@@ -1,39 +1,42 @@
 {
-  pkgs,
-  inputs,
-  ...
+    pkgs,
+    inputs,
+    ...
 }:
 
 {
-  imports = [
-    inputs.niri-nix.homeModules.default
-    ./modules/niri.nix
-    ./modules/noctalia.nix
-    ./modules/fish.nix
-    ./modules/starship.nix
-    ./modules/kitty.nix
-    ./modules/vicinae.nix
-    ./modules/zoxide.nix
-    ./modules/nvf
-  ];
-  home.username = "zenith";
-  home.homeDirectory = "/home/zenith";
+    imports = [
+        inputs.niri-nix.homeModules.default
+        ./modules/niri.nix
+        ./modules/noctalia.nix
+        ./modules/fish.nix
+        ./modules/starship.nix
+        ./modules/kitty.nix
+        ./modules/vicinae.nix
+        ./modules/zoxide.nix
+        ./modules/nvf
+        ./modules/obsidian.nix
+    ];
+    home.username = "zenith";
+    home.homeDirectory = "/home/zenith";
 
-  home.stateVersion = "26.11";
+    home.stateVersion = "26.11";
 
-  home.packages = with pkgs; [
-    git
-    htop
-  ];
+    home.packages = with pkgs; [
+        git
+        htop
+        vesktop
+        gh
+    ];
 
-  programs.home-manager.enable = true;
-  programs.starship = {
-    enable = true;
-    enableFishIntegration = true;
-  };
-  programs.fastfetch.enable = true;
-      programs.zen-browser = {
-    enable = true;
-    setAsDefaultBrowser = true;
-  };
+    programs.home-manager.enable = true;
+    programs.starship = {
+        enable = true;
+        enableFishIntegration = true;
+    };
+    programs.fastfetch.enable = true;
+    programs.zen-browser = {
+        enable = true;
+        setAsDefaultBrowser = true;
+    };
 }

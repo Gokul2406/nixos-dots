@@ -1,4 +1,5 @@
 {
+
     programs.nvf.settings.vim = {
         dashboard = {
             dashboard-nvim.enable = true;
@@ -14,6 +15,7 @@
 
             };
         };
+        terminal.toggleterm.enable = true;
 
         fzf-lua.enable = true;
         theme = {

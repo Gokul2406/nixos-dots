@@ -1,24 +1,25 @@
 {
-  programs.starship = {
-    enable = true;
 
-    enableFishIntegration = true;
+    programs.starship = {
+        enable = true;
 
-    settings = {
-      add_newline = false;
+        enableFishIntegration = true;
 
-      character = {
-        success_symbol = "[❯](bold green)";
-        error_symbol = "[❯](bold red)";
-      };
+        settings = {
+            add_newline = false;
 
-      directory = {
-        truncation_length = 3;
-      };
+            character = {
+                success_symbol = "[❯](bold green)";
+                error_symbol = "[❯](bold red)";
+            };
 
-      git_branch = {
-        symbol = " ";
-      };
+            directory = {
+                truncation_length = 3;
+            };
+
+            git_branch = {
+                symbol = " ";
+            };
+        };
     };
-  };
 }

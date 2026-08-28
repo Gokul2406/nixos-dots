@@ -1,12 +1,13 @@
 {
-  programs.zoxide = {
-    enable = true;
-    enableFishIntegration = true;
 
-    options = [
+    programs.zoxide = {
+        enable = true;
+        enableFishIntegration = true;
+
+        options = [
             "--cmd"
             "cd"
         ];
 
-  };
+    };
 }
