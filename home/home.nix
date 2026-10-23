@@ -16,6 +16,7 @@
         ./modules/zoxide.nix
         ./modules/nvf
         ./modules/obsidian.nix
+        ./modules/zed.nix
     ];
     home.username = "zenith";
     home.homeDirectory = "/home/zenith";
@@ -27,6 +28,7 @@
         htop
         vesktop
         gh
+        wxmaxima
     ];
 
     programs.home-manager.enable = true;

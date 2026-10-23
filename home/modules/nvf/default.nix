@@ -5,6 +5,7 @@
         ./langs/python.nix
         ./langs/rust.nix
         ./langs/nix.nix
+        ./langs/julia.nix
         ./completion.nix
         ./plugins/neorg.nix
         ./binds.nix

@@ -51,6 +51,7 @@
     };
 
     services.blueman.enable = true;
+    services.vaultwarden.enable = true;
     programs.niri.enable = true;
     programs.nix-ld.enable = true;
     programs.xwayland.enable = true;
