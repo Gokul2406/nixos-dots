@@ -11,6 +11,24 @@
         "flakes"
     ];
 
+    nix.settings = {
+        trusted-users = [
+            "root"
+            "zenith"
+        ];
+
+        substituters = [
+            "https://noctalia.cachix.org"
+            "https://vicinae.cachix.org"
+        ];
+
+        # 3. Trust the public keys for Vicinae and Noctalia
+        trusted-public-keys = [
+            "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+            "vicinae.cachix.org-1:1kDrfienkGHPYbkpNj1mWTr7Fm1+zcenzgTizIcI3oc="
+        ];
+    };
+
     hardware.bluetooth = {
         enable = true;
         powerOnBoot = true;
@@ -28,6 +46,11 @@
     networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
     networking.networkmanager.enable = true;
+
+    virtualisation.podman = {
+        enable = true;
+        dockerCompat = true;
+    };
 
     time.timeZone = "Asia/Kolkata";
 
@@ -91,6 +114,7 @@
         devenv
         xwayland-satellite
         lsd
+        distrobox
     ];
 
     programs.firefox.enable = true;

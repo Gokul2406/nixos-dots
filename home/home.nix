@@ -29,6 +29,9 @@
         vesktop
         gh
         wxmaxima
+        grim
+        slurp
+        wl-clipboard
     ];
 
     programs.home-manager.enable = true;

@@ -8,6 +8,7 @@
         noto-fonts-cjk-sans
         noto-fonts-color-emoji
         liberation_ttf
+        nerd-fonts.fantasque-sans-mono
     ];
 
     fonts.fontconfig = {

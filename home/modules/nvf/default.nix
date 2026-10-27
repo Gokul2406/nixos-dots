@@ -6,6 +6,7 @@
         ./langs/rust.nix
         ./langs/nix.nix
         ./langs/julia.nix
+        ./langs/typst.nix
         ./completion.nix
         ./plugins/neorg.nix
         ./binds.nix

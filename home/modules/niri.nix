@@ -107,6 +107,11 @@
                 "Mod+Shift+O".power-off-monitors = [ ];
                 "Mod+Shift+E".quit = [ ];
                 "Mod+T".spawn = [ "kitty" ];
+                "Mod+Shift+S".spawn = [
+                    "sh"
+                    "-c"
+                    "${pkgs.grim}/bin/grim -g \"$(${pkgs.slurp}/bin/slurp)\" - | ${pkgs.wl-clipboard}/bin/wl-copy"
+                ];
                 "Mod+Space".spawn = [
                     "vicinae"
                     "toggle"
